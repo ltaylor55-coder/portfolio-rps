@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors - Portfolio Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="game-title">
+                <i class="fas fa-gem"></i>
+                ROCK PAPER SCISSORS
+                <i class="fas fa-scissors"></i>
+            </h1>
+            <p class="subtitle">Web Programming Final Portfolio Project</p>
+            <p class="author">Created by Lawrence Taylor</p>
+        </header>
+
+        <!-- Game Instructions -->
+        <section class="instructions">
+            <h2><i class="fas fa-info-circle"></i> How to Play</h2>
+            <div class="instructions-content">
+                <div class="instruction-step">
+                    <div class="step-number">1</div>
+                    <p>Select <strong>Rock</strong>, <strong>Paper</strong>, or <strong>Scissors</strong> by clicking the buttons below</p>
+                </div>
+                <div class="instruction-step">
+                    <div class="step-number">2</div>
+                    <p>Click <strong>"PLAY ROUND"</strong> to play against the computer</p>
+                </div>
+                <div class="instruction-step">
+                    <div class="step-number">3</div>
+                    <p>First to win <strong>5 rounds</strong> wins the game!</p>
+                </div>
+                <div class="instruction-step">
+                    <div class="step-number">4</div>
+                    <p><strong>Rock</strong> beats Scissors • <strong>Paper</strong> beats Rock • <strong>Scissors</strong> beats Paper</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Area -->
+        <main class="game-area">
+            <!-- Player Area -->
+            <div class="player-area">
+                <h2 class="area-title player-title">
+                    <i class="fas fa-user"></i> PLAYER
+                </h2>
+                <div class="score-display">
+                    <span id="player-score">0</span>
+                </div>
+                <div class="choice-display">
+                    <div class="choice-icon" id="player-choice-icon">
+                        <i class="fas fa-question"></i>
+                    </div>
+                </div>
+                <div class="choice-text" id="player-choice-text">
+                    Choose your move
+                </div>
+            </div>
+
+            <!-- VS Separator -->
+            <div class="vs-container">
+                <div class="vs-circle">VS</div>
+                <div class="round-info">
+                    Round: <span id="current-round">0</span>/5
+                </div>
+            </div>
+
+            <!-- Computer Area -->
+            <div class="computer-area">
+                <h2 class="area-title computer-title">
+                    <i class="fas fa-robot"></i> COMPUTER
+                </h2>
+                <div class="score-display">
+                    <span id="computer-score">0</span>
+                </div>
+                <div class="choice-display">
+                    <div class="choice-icon" id="computer-choice-icon">
+                        <i class="fas fa-question"></i>
+                    </div>
+                </div>
+                <div class="choice-text" id="computer-choice-text">
+                    Waiting...
+                </div>
+            </div>
+        </main>
+
+        <!-- Choice Selection -->
+        <section class="selection-area">
+            <h3 class="selection-title">SELECT YOUR MOVE</h3>
+            <div class="choices">
+                <button class="choice-btn rock-btn" data-choice="rock">
+                    <i class="fas fa-fist-raised"></i>
+                    <span class="btn-label">ROCK</span>
+                </button>
+                <button class="choice-btn paper-btn" data-choice="paper">
+                    <i class="fas fa-hand-paper"></i>
+                    <span class="btn-label">PAPER</span>
+                </button>
+                <button class="choice-btn scissors-btn" data-choice="scissors">
+                    <i class="fas fa-hand-scissors"></i>
+                    <span class="btn-label">SCISSORS</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Game Controls -->
+        <section class="controls-area">
+            <div class="controls">
+                <button class="play-btn" id="play-btn" disabled>
+                    <i class="fas fa-play"></i> PLAY ROUND
+                </button>
+                <button class="reset-btn" id="reset-btn">
+                    <i class="fas fa-redo"></i> RESET GAME
+                </button>
+            </div>
+            
+            <div class="result-display">
+                <div class="result-message" id="result-message">
+                    Select your move to begin!
+                </div>
+                <div class="game-status" id="game-status">
+                    First to 5 wins!
+                </div>
+            </div>
+        </section>
+
+        <!-- Game History & Info -->
+        <section class="info-area">
+            <div class="history-container">
+                <h3><i class="fas fa-history"></i> ROUND HISTORY</h3>
+                <div class="history-list" id="history-list">
+                    <!-- History items will be added here -->
+                </div>
+            </div>
+            
+            <div class="stats-container">
+                <h3><i class="fas fa-chart-bar"></i> GAME STATS</h3>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-label">Total Games</div>
+                        <div class="stat-value" id="total-games">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Player Wins</div>
+                        <div class="stat-value" id="player-wins">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Computer Wins</div>
+                        <div class="stat-value" id="computer-wins">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Win Rate</div>
+                        <div class="stat-value" id="win-rate">0%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Web Programming Final Portfolio Project • Rock Paper Scissors Game</p>
+            <p>Built with HTML5, CSS3, and JavaScript • © 2024</p>
+        </footer>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="click-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3" preload="auto"></audio>
+    <audio id="win-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3" preload="auto"></audio>
+    <audio id="lose-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-retro-game-emergency-alarm-1000.mp3" preload="auto"></audio>
+    <audio id="draw-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-game-ball-tap-2073.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
