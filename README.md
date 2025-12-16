@@ -32,3 +32,37 @@
 -Game history to see past moves
 
  -Section in the middle showing player vs computer
+
+
+ ## How to Play
+
+-Click Rock, Paper, or Scissors
+-Click "PLAY ROUND"
+-Watch the computer pick
+-See who wins
+-First to 5 points wins!
+
+Rules:
+-Rock beats Scissors
+-Paper beats Rock
+-Scissors beats Paper
+
+
+## Things I Wanted to Also Add But Didn't Know How to
+
+-Player vs. Player mode
+-Different difficulty levels
+-Different themes and colors
+
+
+## What I have Learned
+
+-How to add fun features on websites
+-How to properly organize my code
+-Adding sounds into my code to give it a real game feel
+-Taking time to see what works and what doesnt without getting fustrated
+
+
+## Link to my game
+
+https://ltaylor55-coder.github.io/portfolio-rps/
